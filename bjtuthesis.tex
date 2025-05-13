@@ -1,0 +1,89 @@
+%   LaTeX template for Beijing Jiaotong University theses
+%
+%   -*- coding: utf-8 -*-
+%
+%   File Name : bjtuthesis.tex
+%
+%   Usage : Main file entry
+%
+%   Creation Date : 2025-05-13
+%
+%   Author : PangSMPang (pangsmpang@gmail.com)
+
+% If you encounter issues while using this template, please try the following:
+%   1. Refer to the online documentation provided earlier to check for potential solutions.
+%   2. Browse the GitHub Issue list to see if your problem has already been addressed.
+%   3. If needed, create a new GitHub Issue to report or discuss the problem with me.
+
+\documentclass[
+    TwoSide = false, % set to false if you don't need empty pages
+    BlindReview=false, % set to true if you need to hide personal information
+    NumberByChapter=false, %set to true if you need to number by chapter
+]{bjtuthesis}
+\setcounter{gbrefcompress}{4} %在同一处引用多篇序号连续的文献时，标注标签默认是从两篇文献开始压缩的，gbrefcompress 的值为 4，则4篇以上才压缩，引用编号将以逗号分隔，例如 [1,2,3]，而不是 [1–3]，如何设置看个人喜好
+\captionsetup[table]{labelsep=space}%设置正文表的分隔符可选参数space:空格 colon:冒号 period:点 quad:长空格
+\captionsetup[figure]{labelsep=space}%设置正文图的分隔符可选参数space:空格 colon:冒号 period:点 quad:长空格
+%========================================================================%
+% 自定义内容
+%========================================================================%
+\author{xxx}
+\studentNumber{xxx}
+\advisor{xxx}
+\department{xxx}
+\major{xxx}
+\title{ 毕业论文（设计）题目}
+\englishtitle{Title of Project (Thesis)}
+
+
+%========================================================================%
+% 前置部分
+%========================================================================%
+
+\begin{document}
+\pagestyle{empty} 
+\makecover % 封面
+\include{chapters/authorization} % 版权声明
+\include{chapters/originality} % 诚信声明
+\setcounter{page}{1}
+\pagenumbering{roman}
+\pagestyle{bjtufancy}
+
+\include{chapters/chineseabstract} % 中文摘要
+\include{chapters/englishabstract} % 中文摘要
+
+% 目录
+\tableofcontents
+\addcontentsline{toc}{part}{\color{black}目\hspace{2em}录}%
+\cleardoublepage
+%========================================================================%
+% 主体部份
+%========================================================================%
+
+\newpage
+\pagestyle{bjtufancymain}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\input{chapters/introduction}
+\input{chapters/relatedwork}
+\input{chapters/method}
+\input{chapters/experiments}
+\input{chapters/conclusion}
+
+%========================================================================%
+% 参考文献
+%========================================================================%
+\newpage
+\pagestyle{bjtufancy}
+\printbibliography[heading=bjtuheading]
+\addcontentsline{toc}{part}{\color{black}参考文献}
+%========================================================================%
+% 致谢
+%========================================================================%
+\include{chapters/acknowledgement}
+%========================================================================%
+% 附录
+%========================================================================%     
+\input{chapters/appendix}
+
+\end{document}

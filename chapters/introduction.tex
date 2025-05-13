@@ -1,0 +1,100 @@
+\cleardoublepage{}
+
+\chapter{绪论}
+引言（或绪论）简要说明研究工作的目的、范围、相关领域的前人工作和知识空白、理论基础和分析、研究设想、研究方法和实验设计、预期结果和意义等。应言简意赅，不要与摘要雷同，不要成为摘要的注释。一般教科书中有的知识，在引言中不必赘述。
+
+\section{编译方式说明}
+
+\subsection*{在 Overleaf 上编译}
+
+请注意以下事项：
+
+\begin{itemize}
+  \item 请上传整个 \verb|.zip| 压缩包。
+  \item 不要删除 \verb|.latexmkrc| 文件，Overleaf 会自动识别并使用 XeLaTeX 编译（你也可以手动设置为 XeLaTeX）。
+  \item 在 \verb|chapter| 文件夹下编辑你的各章节内容。
+\end{itemize}
+
+\subsection*{在本地编译}
+
+请按照以下步骤操作：
+
+\begin{itemize}
+  \item 打开主 \verb|.tex| 文件，例如：\verb|bjtuthesis.tex|。
+  \item 进入：选项 $\rightarrow$ 设置 TexStudio $\rightarrow$ 构建，设置如下：
+    \begin{itemize}
+      \item 默认编译器选择：\verb|XeLaTeX|
+      \item 默认文献工具选择：\verb|Biber|
+    \end{itemize}
+  \item 点击工具栏绿色箭头“构建 \& 查看”（或按 \verb|F5|）。
+  \item 如果文献未显示，点击顶部菜单“工具(T)” $\rightarrow$ “参考文献(B)”运行 Biber（或按 \verb|F8|）。
+  \item 然后运行 XeLaTeX 两次，即点击两次“构建 \& 查看”（\verb|F5|）。
+\end{itemize}
+
+\vspace{1em}
+\noindent 快捷方式：设置完成后，按顺序使用快捷键 \verb|F5 - F8 - F5 - F5| 即可完整编译。
+
+\subsection*{在服务器（Linux）编译}
+
+建议使用 \verb|Makefile|，集成了编译、清理中间文件、打开 PDF 三个步骤。
+
+注意：使用 \verb|Makefile| 时请勿修改主 \verb|.tex| 文件名。
+
+可用命令如下：
+
+\begin{itemize}
+  \item \verb|make|：等同于 \verb|make all|，执行清理后编译 PDF。
+  \item \verb|make bjtuthesis|：仅编译 PDF。
+  \item \verb|make clean|：仅清理中间文件。
+  \item \verb|make view|：仅打开生成的 PDF。
+\end{itemize}
+
+
+\section{统计字数脚本}
+
+模板提供了统计字数脚本，可在服务器或本地运行：
+
+\subsection*{使用 Bash 运行 \texttt{word\_count.sh}}
+
+\begin{enumerate}
+  \item 打开终端（Windows 推荐使用 Git Bash 或 WSL + VS Code），切换到项目目录：
+  
+  \begin{verbatim}
+cd path\to\your\project
+  \end{verbatim}
+
+  \item 执行脚本，传入主 \verb|.tex| 文件名：
+  
+  \begin{verbatim}
+./scripts/word_count.sh bjtuthesis.tex
+  \end{verbatim}
+
+  \item 输出说明：
+  \begin{itemize}
+    \item 控制台显示简要统计信息；
+    \item 完整统计信息输出至：\verb|outputs/bjtuthesis.wordcnt|。
+  \end{itemize}
+\end{enumerate}
+
+\subsection*{使用 PowerShell 运行 \texttt{word\_count.ps1}}
+
+\begin{enumerate}
+  \item 打开终端，切换到项目目录：
+
+  \begin{verbatim}
+cd path\to\your\project
+  \end{verbatim}
+
+  \item 执行脚本，传入主 \verb|.tex| 文件名：
+
+  \begin{verbatim}
+./scripts/word_count.ps1 bjtuthesis.tex
+  \end{verbatim}
+
+  \item 输出说明：
+  \begin{itemize}
+    \item 控制台显示简要统计信息；
+    \item 完整统计信息输出至：\verb|outputs/bjtuthesis.wordcnt|。
+  \end{itemize}
+\end{enumerate}
+
