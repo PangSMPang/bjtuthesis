@@ -2,22 +2,26 @@
 
 ## 📌 简介
 
-网上虽然有各种北交大非官方的模板，但是格式与学校的word都略有差别，本模板严格参照北京交通大学计算机学院的本科生毕业论文Word模板编写，旨在为学弟学妹们提供便利。
+网上虽然有各种北交大非官方的模板，但是格式都与学校的略有差别，本模板严格参照北京交通大学计算机学院的本科生毕业论文Word模板编写，旨在为学弟学妹们提供便利。
 
-如果您发现格式问题，或是增加模板功能，欢迎提交issue和pr！
+##### 您可以点击此处预览模板样式：[查看 PDF 文档](https://pangsmpang.github.io/pdfReader/pdf/bjtuthesis.pdf)
 
-本模板基于 [https://github.com/billhu0228/BJTUThesisTemplete](https://github.com/billhu0228/BJTUThesisTemplete) 的模板修改而来，对很多部分进行了修改并对整体的结构做了调整。其下面介绍本模板的使用方法。
+##### 如果您发现格式问题，欢迎[在此处](https://github.com/PangSMPang/bjtuthesis/issues)提交issue！
+
+##### 如果您想要增加模板功能，欢迎[在此处](https://github.com/PangSMPang/bjtuthesis/pulls)提交PR！
+
+本模板基于 [BJTUThesisTemplete](https://github.com/billhu0228/BJTUThesisTemplete) 修改而来，在原模板基础上做了大量修改，并对整体结构进行了重构优化。下面介绍本模板的使用方法。
 
 ---
 
 ## 🛠️ 使用
 
 * Overleaf 是一个线上 LaTeX 编辑器，可以在不安装任何工具的情况下编写 LaTeX 文档，同时也可以和其他人共享文档，共同编辑。
-* 本地编译比 Overleaf 更快，而且本地编译可以使用 Git 来记录版本。推荐有能力的同学设置本地编译环境，并推荐使用 Visual Studio Code 配合 LaTeX Workshop 插件。
+* 本地编译比 Overleaf 更快，而且本地编译可以使用 Git 来记录版本。推荐大家设置本地编译环境，并使用 Visual Studio Code 配合 LaTeX Workshop 插件。
 
 ---
 
-## ⚙️ 可选参数
+### ⚙️ 可选参数
 
 | **参数名称**          | **选项一**                         | **选项二**                 |
 | ----------------- | ------------------------------- | ----------------------- |
@@ -25,15 +29,23 @@
 | `BlindReview`     | `true`: 生成盲审用 pdf（隐藏个人信息）       | `false`: 生成提交用 pdf      |
 | `NumberByChapter` | `true`: 正文中的图片、表格、公式按章节编号       | `false`: 正文图片、表格、公式全局编号 |
 
+### 📁 文件与信息填写说明
+
+* `TwoSide` 参数主要用于终稿打印，确保每一章从奇数页（右侧）开始
+* 请在 `bjtuthesis.tex` 文件中补全个人信息
+* 请在`chapter/`文件夹下补全各章节内容
+* 请在`figure/`文件夹下放置插图
+* 请在`reference/ref.bib`文件内更新引用文献信息
+
 ---
 
 ## ✅ 编译方式
 
-### 🖥️ A. 服务器/本地测试步骤（推荐 TeX Live + VSCode 或命令行）：
+### 🖥️ A. 服务器/本地测试步骤（推荐 TeX Live + VSCode 或命令行）
 
 1. 确保你已经安装：
 
-   * TeX Live（含 `xelatex` 和 `biber`）
+   * TeX Live（含 `XeLaTeX` 和 `Biber`）
    * `latexmk`
 
 2. 在你的项目根目录打开终端，运行：
@@ -58,24 +70,24 @@
 
 2. 点击 **选项 -> 设置TeXstudio -> 构建**
 
-   * 默认编译器选择 `XeLaTex`
-   * 默认文献工具选择 `BiBer`
+   * 默认编译器选择 `XeLaTeX`
+   * 默认文献工具选择 `Biber`
 
 3. 点击工具栏上的绿色箭头（`构建 & 查看`）【或是按`F5`】
 
 4. 如果文献没有显示，选择最上方的 `工具(T)`，点击 `参考文献(B)` 运行 biber 【或是按`F8`】
 
-5. 再运行两次 XeLatex，即点击工具栏上的绿色箭头（`构建 & 查看`）【或是按 `F5`】两次
+5. 再运行两次 XeLaTeX，即点击工具栏上的绿色箭头（`构建 & 查看`）【或是按 `F5`】两次
 
 📌 **快捷方式建议：** 依次按 `F5 - F8 - F5 - F5` 即可成功编译
 
 ---
 
 ### ☁️ C. Overleaf 测试步骤
-1. 将整个文件打包压缩然后上传至Overleaf
+1. 将整个项目文件打包压缩后上传至 Overleaf
 2. 打开本项目
-3. `Ctrl+S` 保存或是点击绿色 `ReCompile` 进行编译
-4. Overleaf 会自动读取 `.latexmkrc` 运行编译链（`xelatex → biber → xelatex → xelatex`）
+3. `Ctrl+S` 保存或点击绿色 `ReCompile` 进行编译
+4. Overleaf 会自动读取 `.latexmkrc` 运行编译链（`XeLaTeX → Biber → XeLaTeX → XeLaTeX`）
 
 ---
 
@@ -102,7 +114,7 @@ latexmk -c
 2. 执行脚本：
 
    ```bash
-   ./scripts/word_count.sh bjtuthesis.tex
+   .\scripts\word_count.sh bjtuthesis.tex
    ```
 
 3. 输出说明：
@@ -123,7 +135,7 @@ latexmk -c
 2. 执行脚本：
 
    ```bash
-   ./scripts/word_count.ps1 bjtuthesis.tex
+   .\scripts\word_count.ps1 bjtuthesis.tex
    ```
 
 3. 输出说明：
