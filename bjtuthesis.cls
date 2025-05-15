@@ -162,6 +162,7 @@
 \RequirePackage{afterpage}
 \RequirePackage{makecell}
 \RequirePackage{multicol}
+\RequirePackage{xeCJKfntef}
 %========================================================================%
 % 北京交通大学计算机学院明确给出的格式
 %========================================================================%
