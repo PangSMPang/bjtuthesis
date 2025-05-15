@@ -43,7 +43,7 @@
 \fi
 
 % 处理封面
-\newcommand{\department}[1]{\gdef\@department{\zihao{3} #1}}
+\newcommand{\department}[1]{\gdef\@department{\bjtusongti\zihao{3}#1}}
 \renewcommand{\title}[1]{\renewcommand{\title}{#1}}
 \newcommand{\englishtitle}[1]{\renewcommand{\englishtitle}{#1}}
 \renewcommand{\author}[1]{\renewcommand{\author}{\bjtusongti\zihao{3}#1}}
@@ -76,7 +76,7 @@
 
     \ifbjtuthesis@BlindReview
         \begin{tabular}{lc}
-            \rule{\capwidth}{0pt} & \rule{5cm}{0pt} \\
+            \rule{\capwidth}{0pt} & \rule{5.7cm}{0pt} \\
             \makebox[\capwidth][s]{\zihao{3}学院：} \\ 
             \makebox[\capwidth][s]{\zihao{3}专业：} \\ 
             \makebox[\capwidth][s]{\zihao{3}学生姓名：} \\ 
@@ -85,7 +85,7 @@
         \end{tabular}
     \else
         \begin{tabular}{lc}
-            \rule{\capwidth}{0pt} & \rule{5cm}{0pt} \\
+            \rule{\capwidth}{0pt} & \rule{5.7cm}{0pt} \\
             \makebox[\capwidth][s]{\zihao{3}学院：} & \printdepartment \\ 
             \makebox[\capwidth][s]{\zihao{3}专业：} & \major \\ 
             \makebox[\capwidth][s]{\zihao{3}学生姓名：} & \author \\ 
@@ -97,12 +97,13 @@
 
     \end{spacing}
 
+    %此处的长度以“计算机科学与技术学院”（10个字）所占横线长度为准
     \begin{tikzpicture}[remember picture,overlay]
-        \draw[color=black,thick] (-1.4,4.85)--(3.6,4.85);
-        \draw[color=black,thick] (-1.4,3.75)--(3.6,3.75);
-        \draw[color=black,thick] (-1.4,2.65)--(3.6,2.65);
-        \draw[color=black,thick] (-1.4,1.55)--(3.6,1.55);
-        \draw[color=black,thick] (-1.4,0.45)--(3.6,0.45);
+        \draw[color=black,thick] (-1.4,4.85)--(4.3,4.85);
+        \draw[color=black,thick] (-1.4,3.75)--(4.3,3.75);
+        \draw[color=black,thick] (-1.4,2.65)--(4.3,2.65);
+        \draw[color=black,thick] (-1.4,1.55)--(4.3,1.55);
+        \draw[color=black,thick] (-1.4,0.45)--(4.3,0.45);
     \end{tikzpicture}
 
     \vspace*{0.8cm}
