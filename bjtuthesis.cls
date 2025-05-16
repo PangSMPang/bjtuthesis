@@ -37,6 +37,9 @@
     \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
     \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
 \else
+    \counterwithout{equation}{chapter}
+    \counterwithout{figure}{chapter}
+    \counterwithout{table}{chapter}
     \renewcommand{\theequation}{\arabic{equation}}
     \renewcommand{\thefigure}{\arabic{figure}}
     \renewcommand{\thetable}{\arabic{table}}
