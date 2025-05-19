@@ -105,19 +105,37 @@ latexmk -c
 
 ### 🖥️ A. 使用 bash 运行 `word_count.sh` 文件
 
-1. 打开终端（Windows 建议使用 Git Bash 或 WSL + VS Code），切换到项目目录：
+1. 打开终端，切换到项目目录：
 
-   ```bash
+   ```powershell
    cd path\to\your\project
    ```
 
 2. 执行脚本：
 
-   ```bash
-   .\scripts\word_count.sh bjtuthesis.tex
+   ```powershell
+   ./scripts/word_count.ps1 bjtuthesis.tex
    ```
 
-3. 输出说明：
+3. ⚠️ 如果遇到如下错误：
+
+   ```
+   无法加载文件 … 未对文件进行数字签名。无法在当前系统上运行该脚本。
+   ```
+
+   表示 PowerShell 阻止了未签名脚本的执行。请运行以下命令临时允许当前会话执行脚本（推荐）：
+
+   ```powershell
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+   ```
+
+   然后再次执行脚本：
+
+   ```powershell
+   ./scripts/word_count.ps1 bjtuthesis.tex
+   ```
+
+4. 输出说明：
 
    * 控制台显示简要统计数据
    * 结果输出到 `outputs\bjtuthesis.wordcnt`
