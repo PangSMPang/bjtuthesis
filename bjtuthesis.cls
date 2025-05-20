@@ -233,6 +233,7 @@
 \renewcommand\tableofcontents{%
     \chapter*{\makebox[\linewidth]{\zihao{-2} 目\hspace{2em}录}
         \@mkboth{\MakeUppercase \contentsname}{}}% ADDED
+    \addcontentsline{toc}{part}{\color{black}目\hspace{2em}录}%
 	\vspace{-0.5cm}
     \@starttoc{toc}%
     } 
