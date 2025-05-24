@@ -8,7 +8,7 @@
 %
 %   Creation Date : 2025-05-13
 %
-%   Author : PangSMPang (pangsmpang@gmail.com)
+%   Author : PangSMPang (pangsmpang325@gmail.com)
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{bjtuthesis}[Beijing Jiaotong University Thesis and Design Template, PangSMPang@gmail.com]
 
